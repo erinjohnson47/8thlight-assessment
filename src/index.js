@@ -4,6 +4,7 @@ const config = require('../config')
 const help = require('./cmds/help')
 const version = require('./cmds/version')
 const search = require('./cmds/search')
+const list = require('./cmds/list')
 
 module.exports = () => {
     console.log("Welcome to your bookshelf!")
@@ -32,6 +33,10 @@ module.exports = () => {
 
         case 'help':
             help(args)
+            break;
+
+        case 'list':
+            list(args)
             break;
 
         default:
