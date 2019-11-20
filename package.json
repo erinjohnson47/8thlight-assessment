@@ -1,16 +1,23 @@
 {
-    "name": "google-books-api-cli-app",
+    "name": "books-cli-app",
+    "description": "A CLI APP that queries the Google Books API and allows the user to add books to their bookshelf.",
+    "main": "src/index.js",
     "version": "1.0.0",
     "license": "MIT",
+    "private": true,
     "bin": {
-        "outside": ".bin/outside"
+        "books": "bin/books"
     },
-    "scripts": {
-        "start": "index.js"
-    },
+    "keywords": [
+        "google book api",
+        "cli app",
+        "crud app"
+    ],
+    "scripts": {},
     "devDependencies": {},
-    "dependencies": {
-        "dotenv": "^8.2.0",
-        "gapi": "0.0.3"
+    "dependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/erinjohnson47/8thlight-assessment"
     }
 }
