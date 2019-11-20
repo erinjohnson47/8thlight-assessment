@@ -5,7 +5,9 @@ For my 8th Light Technical Assessment, I am creating a command line application 
 ### How to run this command line app
 1. fork or clone the repository from [here](https://github.com/erinjohnson47/8thlight-assessment)
 2. from the command line, cd into the repository you just forked/cloned and run `npm install` to install dependencies
-3. touch .env and add to your .env file `export GOOGLE_BOOKS_API_KEY=`, you should then insert your Google Books API key immediately after the `=` with no spaces before or after 
+3. touch `config.js` and add
+`const config = {
+    GOOGLE_BOOKS_API_KEY: ''}`, you should then insert your Google Books API key as a string (within the empty single quotes)
 3. to run the application from the command line, type `.bin/outside`
 
 

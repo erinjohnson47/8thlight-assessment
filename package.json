@@ -3,6 +3,7 @@
     "description": "A CLI APP that queries the Google Books API and allows the user to add books to their bookshelf.",
     "main": "src/index.js",
     "version": "1.0.0",
+    "author": "Erin Johnson (www.therealerinjohnson.com)",
     "license": "MIT",
     "private": true,
     "bin": {
@@ -15,7 +16,10 @@
     ],
     "scripts": {},
     "devDependencies": {},
-    "dependencies": {},
+    "dependencies": {
+        "esm": "^3.2.25",
+        "minimist": "^1.2.0"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/erinjohnson47/8thlight-assessment"
