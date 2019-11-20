@@ -11,7 +11,8 @@ module.exports = async (args) => {
                 orderBy: "relevance"
             }
         })
-        console.log(response.data.items, 'this is the books api')
+
+        return response.data.items
 
     } catch (error) {
         console.error(error)
