@@ -1,0 +1,16 @@
+{
+    "name": "google-books-api-cli-app",
+    "version": "1.0.0",
+    "license": "MIT",
+    "bin": {
+        "outside": ".bin/outside"
+    },
+    "scripts": {
+        "start": "index.js"
+    },
+    "devDependencies": {},
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "gapi": "0.0.3"
+    }
+}
