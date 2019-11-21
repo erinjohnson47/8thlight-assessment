@@ -11,8 +11,20 @@ module.exports = async (args) => {
                 orderBy: "relevance"
             }
         })
-
-        return response.data.items
+        const books = response.data.items
+        const booksMap = await books.map((book, index) => {
+            return (
+                { 
+                    Result: index+1,
+                    Title: book.volumeInfo.title,
+                    Authors: book.volumeInfo.authors.length ?
+                        book.volumeInfo.authors.toString() || 'none listed' 
+                        : book.volumeInfo.authors.join(','),
+                    Publisher: book.volumeInfo.publisher || 'none listed'
+                }
+            )
+        })
+        return booksMap
 
     } catch (error) {
         console.error(error)

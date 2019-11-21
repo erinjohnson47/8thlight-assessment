@@ -6,12 +6,19 @@ const list = require('./cmds/list')
 const error = require('./utils/error')
 const home = require('./cmds/home')
 
+// const readline = require('readline');
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// })
+// let userName;
+
 module.exports = () => {
 
     const args = minimist(process.argv.slice(2))
 
     //if no args specified default to help menu
-    let command = args._[0] || 'home';
+    let command = args._[0] || 'help';
 
     //command for version of books
     if (args.version || args.v) {

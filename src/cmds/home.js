@@ -1,18 +1,16 @@
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
-let searchWords = ''
-module.exports = () => {
-    rl.question('Welcome to Google Books API search CLI! What\'s your name?  ', (name) => {
-        console.log(`Hi ${name}!`)
-        rl.question('To search for your book, go ahead and type your first search.  ', (keywords) => {
-            searchWords += keywords
-            console.log(searchWords,'the searchWords typed in', typeof(searchWords), '<-typeof searchWords');
-            rl.close();
-        }) 
-    })
-}
+// const readline = require('readline');
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// })
+// let userName = '';
+// module.exports = () => {
+//     rl.question('Welcome to Google Books API search CLI! What\'s your name?  ', (name) => {
+//         userName = name;
+//         console.log(userName)
+//         console.log(`Hi ${name}! To search, you can type 'books search --keywords <keywords>' or type 'books --help' to see more options.`);
+//         rl.close();
+//         }) 
+// }
 
     

@@ -3,6 +3,7 @@ const menus = {
         books [command] <options>
         
         search ............ search google books
+        list .............. show reading list
         version ........... show package version
         help .............. show help menu for a command`,
 
@@ -14,6 +15,7 @@ const menus = {
     list: `
         books list <options>
         
+        --save, -s ........ save to your reading list
         --list, -l ........ view the list of books you've saved to your bookshelf/reading list
         --keywords, -k .... your list search terms, for multiple keywords, enter the words+separated+like+this+without+spaces or enter as a "string within quotes"`
 
