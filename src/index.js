@@ -4,13 +4,14 @@ const version = require('./cmds/version')
 const search = require('./cmds/search')
 const list = require('./cmds/list')
 const error = require('./utils/error')
+const home = require('./cmds/home')
 
 module.exports = () => {
-    console.log("Welcome to Google Books API search CLI!")
+
     const args = minimist(process.argv.slice(2))
 
     //if no args specified default to help menu
-    let command = args._[0] || 'help';
+    let command = args._[0] || 'home';
 
     //command for version of books
     if (args.version || args.v) {
@@ -23,8 +24,13 @@ module.exports = () => {
     }
 
     switch (command) {
+        case 'home':
+            home(args)
+            break;
+
         case 'search':
             search(args)
+            break;
 
         case 'version':
             version(args)
