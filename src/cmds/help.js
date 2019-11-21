@@ -9,17 +9,18 @@ const menus = {
     search: `
         books search <options>
         
-        --keywords, -k .... your book search terms, please put multi-word keywords within "quotes"`,
+        --keywords, -k .... your book search terms, for multiple keywords, enter the words+separated+like+this+without+spaces or enter as a "string within quotes"`,
     
     list: `
         books list <options>
         
         --list, -l ........ view the list of books you've saved to your bookshelf/reading list
-        --keywords, -k .... your list search terms, please put multi-word keywords within "quotes"`
+        --keywords, -k .... your list search terms, for multiple keywords, enter the words+separated+like+this+without+spaces or enter as a "string within quotes"`
 
 }
 
 module.exports = (args) => {
+    //if args 0 is help, args 1 is the subcommand and should return menus.subCommand, else subcommand is args 0
     const subCommand = args._[0] === 'help'
         ? args._[1]
         : args._[0]

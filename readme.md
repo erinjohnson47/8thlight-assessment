@@ -4,11 +4,11 @@ For my 8th Light Technical Assessment, I am creating a command line application 
 
 ### How to run this command line app
 1. fork or clone the repository from [here](https://github.com/erinjohnson47/8thlight-assessment)
-2. from the command line, cd into the repository you just forked/cloned and run `npm install` to install dependencies
-3. touch `config.js` and add
+2. from the command line, cd into the repository you just forked/cloned and run `npm install books` to install dependencies and `npm link` to run the app by typing "books" in the command line
+3. in the root directory, touch `config.js` and add the following code to this file:
 `const config = {
-    GOOGLE_BOOKS_API_KEY: ''}`, you should then insert your Google Books API key as a string (within the empty single quotes)
-3. to run the application from the command line, type `.bin/outside`
+    GOOGLE_BOOKS_API_KEY: ''}`, you should then insert your Google Books API key (obtained from google, or sent by me via email) as a string (within the empty single quotes)
+3. to run the application from the command line, type `books` and follow the prompts
 
 
 ### User Stories:
@@ -23,5 +23,12 @@ For my 8th Light Technical Assessment, I am creating a command line application 
 
 4. View a “Reading List” with all the books the user has selected from their queries (local reading list and not tied to Google Books account features).
 
-### Technologies (to be updated):
-CLI | Javacsript | Node.js 
+### Technologies and libraries (to be updated):
+CLI | Javacsript | Node.js | axios | minimist | ora
+
+#### resasons for choosing these libraries:
+**axios** - this is to make API calls to the google books API
+
+**minimist** - parses the arguments entered into the terminal
+
+**ora** - adds the progress indicator while the API is being queried so the user knows something is happening in the terminal

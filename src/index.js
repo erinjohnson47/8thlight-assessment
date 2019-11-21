@@ -1,13 +1,11 @@
 const minimist = require('minimist');
-const config = require('../config')
-// const getBooksRequest = require('./api')
 const help = require('./cmds/help')
 const version = require('./cmds/version')
 const search = require('./cmds/search')
 const list = require('./cmds/list')
 
 module.exports = () => {
-    console.log("Welcome to your bookshelf!")
+    console.log("Welcome to Google Books API search CLI!")
     const args = minimist(process.argv.slice(2))
 
     //if no args specified default to help menu
@@ -40,7 +38,7 @@ module.exports = () => {
             break;
 
         default:
-            console.error(`Sorry, "${command}" is not a valid command! You can type 'help' or '--h' for a list of valid commands.`)
+            console.error(`Sorry, "${command}" is not a valid command! You can type 'books help' or '--h' for a list of valid commands.`)
             break;
     }
 }
