@@ -3,6 +3,7 @@ const help = require('./cmds/help')
 const version = require('./cmds/version')
 const search = require('./cmds/search')
 const list = require('./cmds/list')
+const error = require('./utils/error')
 
 module.exports = () => {
     console.log("Welcome to Google Books API search CLI!")
@@ -38,7 +39,7 @@ module.exports = () => {
             break;
 
         default:
-            console.error(`Sorry, "${command}" is not a valid command! You can type 'books help' or '--h' for a list of valid commands.`)
+            error(`Sorry, "${command}" is not a valid command! You can type 'books help' or '--h' for a list of valid commands.`)
             break;
     }
 }

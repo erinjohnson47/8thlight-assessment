@@ -22,7 +22,7 @@ module.exports = async (args) => {
                 return `${index+1}. Title: ${element.volumeInfo.title}, Authors: ${authors}, Publisher: ${element.volumeInfo.publisher}`
             }
         })
-        console.log(`Books matching ${keywords}:`)
+        console.log(`Books matching "${keywords}":`)
         console.log(booksMap)
     } catch (err) {
         spinner.stop()
