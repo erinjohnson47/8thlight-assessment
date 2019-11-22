@@ -4,10 +4,11 @@ This is a command line application that accesses the [Google Books API](https://
 
 ### How to run this command line app
 1. fork or clone the repository from [here](https://github.com/erinjohnson47/8thlight-assessment)
-2. from the command line, cd into the repository you just forked/cloned and run `npm install books` to install dependencies and `sudo npm link` to run the app by typing "books" in the command line (after running `sudo npm link` you may be prompted for your system password to give permission to run this app)
-3. in the root directory, touch `config.js` and add the following code to this file:
-`const config = {
-    GOOGLE_BOOKS_API_KEY: ''}`, you should then insert your Google Books API key (obtained from google, or sent by me via email) as a string (within the empty single quotes)
+2. from the command line, cd into the directory you just forked/cloned into and in the root directory, `touch config.js` and add the following code to this file:
+`module.exports = {
+    GOOGLE_BOOKS_API_KEY: ''
+}`, you should then insert your Google Books API key (obtained from google, or sent by me via email) as a string (within the empty single quotes)
+3. once the config.js file has been added, run `npm install books` to install dependencies and `sudo npm link`; (after running `sudo npm link` you may be prompted for your system password to give permission to run this app)
 4. to run the application from the command line, type `books` and follow the prompts
 
 
