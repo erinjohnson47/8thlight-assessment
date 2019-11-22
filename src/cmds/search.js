@@ -32,9 +32,9 @@ module.exports = async (args) => {
             console.log(`Books matching "${keywords}":`)
             console.log(books)
             //after displaying books, ask if user would like to save any of the results to reading list
-            rl.question(`If you would like to save any of these books to your reading list, please enter the "Result" number(s, separated by ',') and hit enter/return.  `, (answer) => {
+            rl.question(`If you would like to save any of these books to your reading list, please enter the corresponding Result number(s).  `, (answer) => {
 
-                //for each answer in array, delete "result" property, as it is not relevant in reading list, then push that result to booksForReadingList array to be saved
+                //for each corresponding result, delete "result" property, as it is not relevant in reading list, then push that result to booksForReadingList array to be saved
                 for (i=0; i < answer.length; i++) {
                     switch (answer[i]) {
                         case "1":
