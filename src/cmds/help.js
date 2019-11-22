@@ -25,4 +25,5 @@ module.exports = (args) => {
         ? args._[1]
         : args._[0]
     console.log(menus[subCommand] || menus.main)
+    process.exit();
 }

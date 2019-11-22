@@ -19,8 +19,8 @@ let position = 19;
 const filePath = 'src/cmds/list.js';
 
 module.exports = async (args) => {
-    //if the argument doesn't contain the 'keyword' property, let the user know they are missing the keywords property and display correct syntax
-    if (!args.hasOwnProperty('keywords')) {
+    //if the args don't contain the 'keyword' or 'k' prop, let user know search parameters are missing and display correct syntax
+    if (!(args.hasOwnProperty('keywords') || args.hasOwnProperty('k'))) {
         console.log("OOPS! It looks like you forgot to enter any keywords, please enter 'books search <options>' (see options below) or type 'books help' for additional menu options.")
         return help({ _: [ 'search' ] })
     //pass the keywords as argument for getBooks, which queries the API
@@ -82,7 +82,6 @@ module.exports = async (args) => {
                         let buffer = Buffer.from(`${JSON.stringify(booksForReadingList)},${fileContent}`);
                         //write file specifying file, content, length of content, and position of where to write new conent
                         fs.writeSync(file, buffer, 0, buffer.length, position);
-                        fs.close(file);
                     });
                         //alert user that their choices have been saved to reading list
                         console.log(booksForReadingList);
