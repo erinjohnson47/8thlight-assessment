@@ -10,7 +10,8 @@ const menus = {
     search: `
         books search <options>
         
-        --keywords, -k .... your book search terms, for multiple keywords, enter the words+separated+like+this+without+spaces or enter as a "string within quotes"`,
+        --keywords, -k .... your book search terms, for multiple keywords, enter the words+separated+like+this+without+spaces or enter as a "string within quotes"
+        --list, -l ........ your book reading list`,
     
     list: `
         books list <options>

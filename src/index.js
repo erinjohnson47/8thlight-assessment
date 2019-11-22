@@ -4,14 +4,6 @@ const version = require('./cmds/version')
 const search = require('./cmds/search')
 const list = require('./cmds/list')
 const error = require('./utils/error')
-const home = require('./cmds/home')
-
-// const readline = require('readline');
-// const rl = readline.createInterface({
-//     input: process.stdin,
-//     output: process.stdout
-// })
-// let userName;
 
 module.exports = () => {
 
@@ -31,9 +23,6 @@ module.exports = () => {
     }
 
     switch (command) {
-        case 'home':
-            home(args)
-            break;
 
         case 'search':
             search(args)
