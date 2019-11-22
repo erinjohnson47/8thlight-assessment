@@ -8,6 +8,7 @@ For my 8th Light Technical Assessment, I am creating a command line application 
 3. in the root directory, touch `config.js` and add the following code to this file:
 `const config = {
     GOOGLE_BOOKS_API_KEY: ''}`, you should then insert your Google Books API key (obtained from google, or sent by me via email) as a string (within the empty single quotes)
+3. to give your system permission to run application, type `sudo npm link`, you may be prompted for your system password at this time, enter your password
 3. to run the application from the command line, type `books` and follow the prompts
 
 
