@@ -23,12 +23,10 @@ For my 8th Light Technical Assessment, I am creating a command line application 
 
 4. View a “Reading List” with all the books the user has selected from their queries (local reading list and not tied to Google Books account features).
 
-### Technologies and libraries (to be updated):
-CLI | Javacsript | Node.js | axios | minimist | ora
+### Technologies and libraries:
+CLI | Javacsript | Node.js | axios | minimist 
 
 #### resasons for choosing these libraries:
 **axios** - this is to make API calls to the google books API
 
 **minimist** - parses the arguments entered into the terminal
-
-**ora** - adds the progress indicator while the API is being queried so the user knows something is happening in the terminal

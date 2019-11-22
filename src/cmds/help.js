@@ -10,15 +10,12 @@ const menus = {
     search: `
         books search <options>
         
-        --keywords, -k .... your book search terms, for multiple keywords, enter the words+separated+like+this+without+spaces or enter as a "string within quotes"
-        --list, -l ........ your book reading list`,
+        --keywords, -k .... your book search terms, for multiple keywords, enter the words+separated+like+this+without+spaces or enter as a "string within quotes"`,
     
     list: `
         books list <options>
         
-        --save, -s ........ save to your reading list
-        --list, -l ........ view the list of books you've saved to your bookshelf/reading list
-        --keywords, -k .... your list search terms, for multiple keywords, enter the words+separated+like+this+without+spaces or enter as a "string within quotes"`
+        there are no additional books list options at this time`
 
 }
 
