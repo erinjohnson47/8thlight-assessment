@@ -34,16 +34,14 @@ module.exports = async (args) => {
             //after displaying books, ask if user would like to save any of the results to reading list
             rl.question(`If you would like to save any of these books to your reading list, please enter the "Result" number(s, separated by ',') and hit enter/return.  `, (answer) => {
 
-                //if more than one result, split by comma separator
-                let answerArr = answer.split(',')
                 //for each answer in array, delete "result" property, as it is not relevant in reading list, then push that result to booksForReadingList array to be saved
-                for (i=0; i < answerArr.length; i++) {
-                    switch (answerArr[i]) {
-                        case '1':
+                for (i=0; i < answer.length; i++) {
+                    switch (answer[i]) {
+                        case "1":
                             delete books[0].Result;
                             booksForReadingList.push(books[0]);
                             break;
-                        case '2':
+                        case "2":
                             delete books[1].Result;
                             booksForReadingList.push(books[1]);
                             break;
