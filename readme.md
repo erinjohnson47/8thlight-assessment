@@ -1,6 +1,6 @@
-# 8th Light Technical Assessment
+# Google Books API command line application
 
-For my 8th Light Technical Assessment, I am creating a command line application that accesses the [Google Books API](https://developers.google.com/books/docs/overview) to search for books and construct a reading list. 
+This is a command line application that accesses the [Google Books API](https://developers.google.com/books/docs/overview) to search for books and construct a reading list. 
 
 ### How to run this command line app
 1. fork or clone the repository from [here](https://github.com/erinjohnson47/8thlight-assessment)
