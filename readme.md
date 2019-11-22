@@ -4,12 +4,11 @@ For my 8th Light Technical Assessment, I am creating a command line application 
 
 ### How to run this command line app
 1. fork or clone the repository from [here](https://github.com/erinjohnson47/8thlight-assessment)
-2. from the command line, cd into the repository you just forked/cloned and run `npm install books` to install dependencies and `npm link` to run the app by typing "books" in the command line
+2. from the command line, cd into the repository you just forked/cloned and run `npm install books` to install dependencies and `sudo npm link` to run the app by typing "books" in the command line (after running `sudo npm link` you may be prompted for your system password to give permission to run this app)
 3. in the root directory, touch `config.js` and add the following code to this file:
 `const config = {
     GOOGLE_BOOKS_API_KEY: ''}`, you should then insert your Google Books API key (obtained from google, or sent by me via email) as a string (within the empty single quotes)
-3. to give your system permission to run application, type `sudo npm link`, you may be prompted for your system password at this time, enter your password
-3. to run the application from the command line, type `books` and follow the prompts
+4. to run the application from the command line, type `books` and follow the prompts
 
 
 ### User Stories:
