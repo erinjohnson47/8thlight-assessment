@@ -28,9 +28,15 @@ module.exports = async (args) => {
         try {
             const keywords = args.keywords || args.k
             const books = await getBooks(keywords)
-    
             console.log(`Books matching "${keywords}":`)
-            console.log(books)
+            const booksMap = await books.map((book) => {
+                console.log(`
+    Result: ${book.Result},
+    Title: ${book.Title},
+    Authors: ${book.Authors},
+    Publisher: ${book.Publisher}
+                `)
+            })
             //after displaying books, ask if user would like to save any of the results to reading list
             rl.question(`If you would like to save any of these books to your reading list, please enter the corresponding Result number(s).  `, (answer) => {
 
@@ -82,7 +88,13 @@ module.exports = async (args) => {
                         fs.writeSync(file, buffer, 0, buffer.length, position);
                     });
                         //alert user that their choices have been saved to reading list
-                        console.log(booksForReadingList);
+                        const booksForListMap = booksForReadingList.map((book) => {
+                            console.log(`
+    Title: ${book.Title},
+    Authors: ${book.Authors},
+    Publisher: ${book.Publisher}
+                            `)
+                        });
                         (booksForReadingList.length > 1) ? 
                             console.log('^ These books have been saved to your reading list. To view your reading list, type \'books list\'.')
                             : console.log('^ This book has been saved to your reading list. To view your reading list, type \'books list\'.')

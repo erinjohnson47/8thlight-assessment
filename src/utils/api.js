@@ -13,19 +13,16 @@ module.exports = async (args) => {
         })
         //API call returns an array of 5 objects
         const books = response.data.items
-        console.log(books,'<-this is books', books[0], '<-this is books[0]')
 
         //map through the objects
         const booksMap = await books.map((book, index) => {
-            return (
-                {
-                    Result: index+1,
-                    Title: book.volumeInfo.title,
-                    Authors: book.volumeInfo.authors ?
-                    book.volumeInfo.authors.join(', ') : 'none listed',
-                    Publisher: book.volumeInfo.publisher || 'none listed'
-                }
-            )
+            return {
+                Result: index+1,
+                Title: book.volumeInfo.title || 'none listed',
+                Authors: book.volumeInfo.authors ?
+                book.volumeInfo.authors.join(', ') : 'none listed',
+                Publisher: book.volumeInfo.publisher || 'none listed'
+            }
         })
         return booksMap
 
