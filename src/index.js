@@ -6,7 +6,7 @@ const list = require('./cmds/list')
 const error = require('./utils/error')
 
 module.exports = () => {
-
+    
     const args = minimist(process.argv.slice(2))
 
     //if no args specified default to help menu
