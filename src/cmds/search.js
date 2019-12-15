@@ -12,6 +12,24 @@ const readline = require('readline');
 //empty array to push saved books to reading list
 const booksForReadingList = [];
 
+const bookFormat = (arrayOfBooks) => {
+    arrayOfBooks.map(book => {
+        if (book.Result) {
+            console.log(`
+        Result: ${book.Result}
+        Title: ${book.Title}
+        Author(s): ${book.Authors}
+        Publisher: ${book.Publisher}`)
+        } else {
+            console.log(`
+        Title: ${book.Title}
+        Author(s): ${book.Authors}
+        Publisher: ${book.Publisher}`)
+        }
+    })
+    
+}
+
 //position in the reading list the new books should be appended
 let position = 19;
 
@@ -29,13 +47,7 @@ module.exports = async (args) => {
             const keywords = args.keywords || args.k
             const books = await getBooks(keywords)
             console.log(`Books matching "${keywords}":`)
-            await books.map((book) => {
-                console.log(`
-    Result: ${book.Result}
-    Title: ${book.Title}
-    Author(s): ${book.Authors}
-    Publisher: ${book.Publisher}`)
-            })
+            await bookFormat(books);
             //after displaying books, ask if user would like to save any of the results to reading list
             rl.question(`If you would like to save any of these books to your reading list, please enter the corresponding Result number(s).  `, (answer) => {
 
@@ -72,9 +84,7 @@ module.exports = async (args) => {
 
                 //if the readinglist array contains items:
                 if (booksForReadingList.length) {
-                    console.log(booksForReadingList,'this is booksForReadingList')
                     let booksJson = JSON.stringify(booksForReadingList)
-                    console.log(booksJson,'this is booksJson')
 
                         //read the existing list file
                         fileSystem.readFile(filePath, (err, data) => {
@@ -92,7 +102,7 @@ module.exports = async (args) => {
                             fileSystem.writeSync(file, buffer, 0, buffer.length, position);
                                     //alert user that their choices have been saved to reading list
                         });
-
+                    bookFormat(booksForReadingList);
                     (booksForReadingList.length > 1) ? 
                             console.log('^ These books have been saved to your reading list. To view your reading list, type \'books list\'.')
                             : console.log('^ This book has been saved to your reading list. To view your reading list, type \'books list\'.')
