@@ -31,7 +31,7 @@ const bookFormat = (arrayOfBooks) => {
 };
 
 // position in the reading list the new books should be appended
-const position = 21;
+const insertPosition = 21;
 
 // the file path for the reading list
 const filePath = 'src/cmds/list.js';
@@ -46,34 +46,34 @@ module.exports = async (args) => {
   try {
     // pass the keywords as argument for getBooks, which queries the API
     const keywords = args.keywords || args.k;
-    const books = await getBooks(keywords);
+    const booksFromAPI = await getBooks(keywords);
     console.log(`Books matching "${keywords}":
     ================================`);
-    await bookFormat(books);
+    bookFormat(booksFromAPI);
     // after displaying books, ask if user would like to save any of the results to reading list
     rl.question('If you would like to save any of these books to your reading list, please enter the corresponding Result number(s).  ', (answer) => {
       // for each corresponding result, delete "result" property, as it is not relevant in reading list, then push that result to booksForReadingList array to be saved
       for (let i = 0; i < answer.length; i++) {
         switch (answer[i]) {
           case '1':
-            delete books[0].Result;
-            booksForReadingList.push(books[0]);
+            delete booksFromAPI[0].Result;
+            booksForReadingList.push(booksFromAPI[0]);
             break;
           case '2':
-            delete books[1].Result;
-            booksForReadingList.push(books[1]);
+            delete booksFromAPI[1].Result;
+            booksForReadingList.push(booksFromAPI[1]);
             break;
           case '3':
-            delete books[2].Result;
-            booksForReadingList.push(books[2]);
+            delete booksFromAPI[2].Result;
+            booksForReadingList.push(booksFromAPI[2]);
             break;
           case '4':
-            delete books[3].Result;
-            booksForReadingList.push(books[3]);
+            delete booksFromAPI[3].Result;
+            booksForReadingList.push(booksFromAPI[3]);
             break;
           case '5':
-            delete books[4].Result;
-            booksForReadingList.push(books[4]);
+            delete booksFromAPI[4].Result;
+            booksForReadingList.push(booksFromAPI[4]);
             break;
           default:
             break;
@@ -92,14 +92,14 @@ module.exports = async (args) => {
             throw err;
           }
           let fileContent = data.toString();
-          fileContent = fileContent.substring(position);
+          fileContent = fileContent.substring(insertPosition);
           // open file, r+ = for reading and writing
           const file = fileSystem.openSync(filePath, 'r+');
 
           // add exising file content to new file content so it is not overwritten
           const buffer = Buffer.from(`${(booksJson)}, ${fileContent}`);
           // write file specifying file, content, length of content, and position of where to write new conent
-          fileSystem.writeSync(file, buffer, 0, buffer.length, position);
+          fileSystem.writeSync(file, buffer, 0, buffer.length, insertPosition);
           // alert user that their choices have been saved to reading list
         });
         if (booksForReadingList.length > 1) {
