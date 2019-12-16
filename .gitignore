@@ -1,2 +1,5 @@
 #ignore file with API key
 config.js
+
+#ignore eslint file
+.eslintrc.js
