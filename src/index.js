@@ -1,7 +1,7 @@
 const minimist = require('minimist');
 const help = require('./cmds/help');
 const version = require('./cmds/version');
-const search = require('./cmds/search');
+const Search = require('./cmds/search');
 const list = require('./cmds/list');
 const error = require('./utils/error');
 
@@ -23,7 +23,7 @@ module.exports = () => {
 
   switch (command) {
     case 'search':
-      search(args);
+      new Search(args);
       break;
 
     case 'version':
@@ -35,11 +35,14 @@ module.exports = () => {
       break;
 
     case 'list':
-      list(args);
+      list.displayReadingList();
       break;
 
     default:
-      error(`Sorry, "${command}" is not a valid command! You can type 'books help' or '--h' for a list of valid commands.`);
+      error(`================================
+Sorry, "${command}" is not a valid command! You can type 'books help' or '--h' for a list of valid commands.
+================================`);
+      process.exit();
       break;
   }
 };
