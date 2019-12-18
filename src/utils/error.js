@@ -1,4 +1,4 @@
-module.exports = (message, exit) => {
-    console.error(message)
-    exit && process.exit(1)
-}
+module.exports = (message) => {
+  console.error(message);
+  process.exit(1);
+};
